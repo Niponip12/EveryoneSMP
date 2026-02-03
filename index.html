@@ -84,11 +84,6 @@
       padding: 32px;
       border: 1px solid rgba(212, 175, 55, 0.25);
       box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-      position: relative;
-    }
-
-    .card:hover::before {
-      opacity: 1;
     }
 
     .card h2 {
@@ -103,8 +98,6 @@
     }
 
     .card a {
-      position: relative;
-      z-index: 5;
       display: inline-block;
       margin-top: 18px;
       padding: 12px 22px;
@@ -131,6 +124,34 @@
       color: var(--muted);
     }
 
+    /* 🔥 NEW BIG BUTTON */
+    .big-button {
+      margin-top: 50px;
+      width: 100%;
+      padding: 22px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      border-radius: 18px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+      color: #1a1406;
+      box-shadow: 0 15px 40px rgba(212,175,55,0.45);
+    }
+
+    .code-box {
+      display: none;
+      margin-top: 25px;
+      padding: 22px;
+      text-align: center;
+      background: rgba(0,0,0,0.45);
+      border: 1px solid rgba(212,175,55,0.35);
+      border-radius: 16px;
+      font-size: 1.3rem;
+      color: var(--gold-soft);
+      font-family: monospace;
+    }
+
     footer {
       margin-top: 70px;
       text-align: center;
@@ -143,7 +164,6 @@
   <div class="container">
     <header>
       <div class="pfp">
-        <!-- Replace pfp.png with your own profile picture file -->
         <img src="pfp.png" alt="Everyone SMP Profile Picture" />
       </div>
       <div class="title">
@@ -172,14 +192,39 @@
           Java IP: mountain-george.gl.joinmc.link<br />
           Bedrock IP: 19.ip.gl.ply.gg<br />
           Port: 16155
-          <div class="extra-info">The Bedrock side of the server is currently experiencing issues. You can only connect using Bedrock Together at the moment.</div>
+          <div class="extra-info">
+            The Bedrock side of the server is currently experiencing issues. You can only connect using Bedrock Together at the moment.
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- 💸 BIG BUTTON -->
+    <button class="big-button" onclick="showCode()">
+      Claim €750 Code
+    </button>
+
+    <div class="code-box" id="codeBox">
+      €750 CODE: <strong>rscb82qqo1</strong><br><br>
+      <button class="big-button" style="font-size:1rem;padding:12px" onclick="copyCode()">
+        Copy Code
+      </button>
+    </div>
 
     <footer>
       © 2026 Everyone SMP. Website is made with ai.
     </footer>
   </div>
+
+  <script>
+    function showCode() {
+      document.getElementById("codeBox").style.display = "block";
+    }
+
+    function copyCode() {
+      navigator.clipboard.writeText("rscb82qqo1");
+      alert("Code copied 😎");
+    }
+  </script>
 </body>
 </html>
